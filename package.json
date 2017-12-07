@@ -1,0 +1,18 @@
+{
+  "name": "pizzabot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "botbuilder": "^3.13.0",
+    "date-and-time": "^0.6.1",
+    "dotenv-extended": "^2.0.1",
+    "restify": "^6.3.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lakshmi raj (620717)",
+  "license": "ISC"
+}
