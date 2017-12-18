@@ -22,7 +22,9 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 
-var bot = new builder.UniversalBot(connector);
+var bot = new builder.UniversalBot(connector, function (session, args) {
+    session.send("Sorry.. I didn't understand....");
+});
 
 var luisAppUrl = `https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/955d86a1-7f5e-49b9-b2b4-025448a466de?subscription-key=5c18ddf42e62417885b58f032272274d&verbose=true&timezoneOffset=0&q=`;
 
