@@ -26,8 +26,7 @@ var bot = new builder.UniversalBot(connector, function (session, args) {
     session.send("Sorry.. I didn't understand....");
 });
 
-var luisAppUrl = `	https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/eafd1e94-89c3-4d89-9dff-918a3c0d79bd?subscription-key=137d934f7aea4f45a2216f250237285a&verbose=true&timezoneOffset=0&q=`;
-
+var luisAppUrl = `	https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/184169ec-81bc-47ca-8c04-6cb727951230?subscription-key=5364617766fc492e8ea5f45e859e487d&verbose=true&timezoneOffset=0&q=`
 bot.recognizer(new builder.LuisRecognizer(luisAppUrl));
 bot.dialog("OrderPizza",[
   function(session,args,next){
