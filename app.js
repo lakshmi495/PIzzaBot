@@ -124,7 +124,7 @@ bot.dialog("OrderPizza",[
   }
 ]).triggerAction({
     matches: 'PizzaOrdering'
-}).cancelAction('your order is not placed.', "Okay, your order is not placed. See you again", {
+}).cancelAction('your order is cancelled.', "Okay, your order is not placed. See you again", {
     matches: /^(cancel|nevermind|no|not now)/i
 });
 
