@@ -114,13 +114,8 @@ bot.dialog("OrderPizza",[
   function(session,results){
     var order = session.dialogData.order;
     console.log("result",results.response);
-    if(results.response==true){
-      session.send(`Order confirmed. Order details: <br/>Type: ${order.pizzakind} <br/>quantity: ${order.quantity} <br/> date:${order.orderdate} `);
-      pizzakind=null;
-      quantity=null;
-      orderdate=null;
-    }else{
-      session.send(`Okay, your order is not placed. See you again`);
+   if(results.response==true){
+      session.send(`Order confirmed. Order details: <br/>Type: ${order.pizzakind} <br/>quantity: ${order.quantity} <br/> date:${order.orderdate} `).endDialog();
       pizzakind=null;
       quantity=null;
       orderdate=null;
@@ -129,6 +124,8 @@ bot.dialog("OrderPizza",[
   }
 ]).triggerAction({
     matches: 'PizzaOrdering'
+}).cancelAction('your order is not placed.', "Okay, your order is not placed. See you again", {
+    matches: /^(cancel|nevermind|no|not now)/i
 });
 
 
