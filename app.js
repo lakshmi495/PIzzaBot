@@ -120,6 +120,11 @@ bot.dialog("OrderPizza",[
       quantity=null;
       orderdate=null;
     }
+      else{
+      pizzakind=null;
+      quantity=null;
+      orderdate=null;
+      }
     session.endDialog();
   }
 ]).triggerAction({
