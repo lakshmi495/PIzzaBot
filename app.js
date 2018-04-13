@@ -155,7 +155,10 @@ session.endDialogWithResult({response:order.kindpizza });
 session.beginDialog('OrderPizza',args_to_pass);
   }
 ]).triggerAction({
-    matches: 'values'
+    matches: 'values',
+    onInterrupted: function (session) {
+        session.send('Please provide a pizzakind');
+    }
 });
 
 bot.dialog('number',[
@@ -184,5 +187,8 @@ bot.dialog('number',[
   session.beginDialog('OrderPizza',args_to_pass);
   }
 ]).triggerAction({
-    matches: 'quantity'
+    matches: 'quantity',
+    onInterrupted: function (session) {
+        session.send('Please provide quantity');
+    }
 });
